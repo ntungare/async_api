@@ -4,11 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from async_api.middleware import middleware_1, middleware_2, middleware_3
 from async_api.routes import files, graphql, items, models, root, user
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "*"
-]
+origins = ["http://localhost", "http://localhost:8080", "*"]
 
 app = FastAPI()
 app.add_middleware(

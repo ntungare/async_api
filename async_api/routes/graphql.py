@@ -8,8 +8,4 @@ graphql_router = APIRouter()
 
 schema = build_schema(query=Query)
 
-graphql_router.add_route(
-    "/",
-    GraphQLApp(schema=schema),
-    methods=["POST"]
-)
+graphql_router.add_route("/", GraphQLApp(schema=schema), methods=["POST"])

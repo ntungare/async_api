@@ -6,10 +6,7 @@ BASE_URL = "https://jsonplaceholder.typicode.com"
 
 
 def get_json_data(endpoint: str, content_id: Optional[Union[str, int]] = None) -> Dict:
-    url_segments = [
-        BASE_URL,
-        endpoint
-    ]
+    url_segments = [BASE_URL, endpoint]
     if content_id:
         url_segments.append(str(content_id))
 
