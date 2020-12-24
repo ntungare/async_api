@@ -1,11 +1,14 @@
+from ariadne.asgi import GraphQL
+from ariadne.contrib.federation import make_federated_schema
 from fastapi import APIRouter
-from graphene_federation import build_schema
-from starlette.graphql import GraphQLApp
 
-from async_api.schema.root import Query
+from async_api.resolvers import query_resolvers
+from async_api.schema.root import make_schema
 
 graphql_router = APIRouter()
 
-schema = build_schema(query=Query)
+schema = make_federated_schema(make_schema(), query_resolvers)
 
-graphql_router.add_route("/", GraphQLApp(schema=schema), methods=["POST"])
+print(schema)
+
+graphql_router.add_route("/", GraphQL(schema=schema))
