@@ -19,7 +19,7 @@ def resolve_author(obj: Dict[str, str], _info: GraphQLResolveInfo, **_) -> Optio
 
 @book.field("characters")
 def resolve_characters(obj: Dict[str, str], _info: GraphQLResolveInfo, **_) -> List[Dict[str, str]]:
-    possible_characters = list()
+    possible_characters = []
 
     for character in characters:
         if character.get("id") in obj.get("characters"):

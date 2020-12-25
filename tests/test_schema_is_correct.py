@@ -19,7 +19,7 @@ class SuperBasicTest(GraphQLTest):
         type Query {
             bookById(id: ID): Book
         }
-        
+
         type Book {
             id: ID
             name: String
@@ -27,13 +27,13 @@ class SuperBasicTest(GraphQLTest):
             author: Author
             characters: [Character]
         }
-        
+
         type Author {
             id: ID
             firstName: String
             lastName: String
         }
-        
+
         type Character {
             id: ID
             firstName: String
