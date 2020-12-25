@@ -13,6 +13,7 @@ fastapi = "^0.63"
 uvicorn = "^0.13"
 requests = "^2.25"
 ariadne = "^0.12"
+opentracing = "^2.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
